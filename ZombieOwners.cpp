@@ -66,8 +66,10 @@ bool ZombieOwners::Update(ULONGLONG nAgeInSeconds, const std::wstring& sDiagDire
     if (!EnablePrivilege(SE_DEBUG_NAME, sPrivError))
     {
         std::wstringstream strErrorInfo;
-        strErrorInfo << L"Cannot enable Debug Programs privilege. This program must be executed with administrative privileges."
+        strErrorInfo 
+            << L"Cannot enable Debug Programs privilege. This program must be executed with administrative privileges." << std::endl
             << sPrivError;
+        sErrorInfo = strErrorInfo.str();
         return false;
     }
 
