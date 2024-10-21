@@ -183,6 +183,7 @@
   <ItemGroup>
     <None Include="LICENSE" />
     <None Include="README.md" />
+    <None Include="ZombieFinder - public.pptx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

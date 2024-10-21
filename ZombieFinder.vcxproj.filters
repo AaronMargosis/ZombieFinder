@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Slide deck">
+      <UniqueIdentifier>{e1e790e0-49d1-4e22-9360-38af23fd36bb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZombieFinder.cpp">
@@ -107,5 +110,8 @@
   <ItemGroup>
     <None Include="README.md" />
     <None Include="LICENSE" />
+    <None Include="ZombieFinder - public.pptx">
+      <Filter>Slide deck</Filter>
+    </None>
   </ItemGroup>
 </Project>
