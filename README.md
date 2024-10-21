@@ -3,6 +3,8 @@ Identify zombie processes/threads and their reasons for being undead.
 
 A _zombie process_ is one that has exited but that is still represented in kernel memory. This happens when another process retains a handle to the process or to one of its threads and fails to release it, or when something in the kernel obtains a similar reference and fails to dereference it after no longer needing it. System performance can suffer when zombies accumulate in large numbers. This utility identifies zombie processes and the processes responsible for keeping them "undead," as well as zombie processes that are being kept alive solely because of kernel references.
 
+(Online presentation about ZombieFinder: https://youtu.be/bKEvxSGhS-M)
+
 A process that has recently exited should not be considered a zombie. A process that has been waiting on another process' exit should be granted some time to retrieve its exit code and otherwise clean up its references. By default, this utility considers a process to be a zombie only if it had exited at least three seconds ago; this threshold can be changed with a command-line parameter.
 
 The `-threads` option lists all process objects on the system, indicating whether each has exited, how many active and exited thread objects are associated with it, and its handle count.
