@@ -317,7 +317,8 @@ void OutputSummaryCsv(const ZombieOwners& zombieOwners, ULONGLONG /*ulNow*/, std
 
     // Table headers
     *pStream 
-        << L"Exe name (PID)" << szTabDelim
+        << L"Exe name" << szTabDelim
+        << L"PID" << szTabDelim
         << L"Count" << szTabDelim
         << L"Services" 
         << std::endl;
@@ -328,7 +329,8 @@ void OutputSummaryCsv(const ZombieOwners& zombieOwners, ULONGLONG /*ulNow*/, std
         iter++)
     {
         *pStream
-            << (*iter)->sExeName << L" (" << (*iter)->PID << L")" << szTabDelim
+            << (*iter)->sExeName << szTabDelim
+            << (*iter)->PID << szTabDelim
             << (*iter)->zombieOwningInfo.size() << szTabDelim;
         if (nullptr != (*iter)->pServiceList)
         {
@@ -348,7 +350,7 @@ void OutputSummaryCsv(const ZombieOwners& zombieOwners, ULONGLONG /*ulNow*/, std
     if (zombieOwners.UnexplainedZombies().size() > 0)
     {
         *pStream
-            << L"(No process)" << szTabDelim << zombieOwners.UnexplainedZombies().size() << szTabDelim << std::endl;
+            << L"(No process)" << szTabDelim << szTabDelim << zombieOwners.UnexplainedZombies().size() << szTabDelim << std::endl;
     }
 
     // Any process enumeration errors
@@ -360,7 +362,7 @@ void OutputSummaryCsv(const ZombieOwners& zombieOwners, ULONGLONG /*ulNow*/, std
             iter++
             )
         {
-            *pStream << L"ERROR: " << *iter << szTabDelim << szTabDelim << std::endl;
+            *pStream << L"ERROR: " << *iter << szTabDelim << szTabDelim << szTabDelim << std::endl;
         }
     }
 }
